@@ -1,5 +1,8 @@
 package tools
 
+import "log"
+
 func ShortURL(url string) (string, error) {
-	return url, nil
+	log.Println("SHORTENER", url+"SHORT")
+	return url+"SHORT", nil
 }

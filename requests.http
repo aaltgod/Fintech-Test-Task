@@ -3,7 +3,7 @@ POST localhost:1453/short
 Content-type: application/json
 
 {
-  "url": "short"
+  "url": "link"
 }
 
 ### Send long URL
@@ -11,5 +11,21 @@ POST localhost:1453/long
 Content-type: application/json
 
 {
-  "url": "long"
+  "url": "link"
+}
+
+### Send short URL
+POST localhost:1453/short
+Content-type: application/json
+
+{
+  "url": "link2"
+}
+
+### Send long URL
+POST localhost:1453/long
+Content-type: application/json
+
+{
+  "url": "link2"
 }
