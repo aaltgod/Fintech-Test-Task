@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"Fintech-Test-Task/storage"
-	"Fintech-Test-Task/tools"
+	"github.com/alyaskastorm/Fintech-Test-Task/storage"
+	"github.com/alyaskastorm/Fintech-Test-Task/tools"
 	"github.com/labstack/echo/v4"
 	"log"
 	"net/http"

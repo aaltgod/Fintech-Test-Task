@@ -1,10 +1,9 @@
 package main
 
 import (
-	h "Fintech-Test-Task/handler"
-	"Fintech-Test-Task/storage"
+	h "github.com/alyaskastorm/Fintech-Test-Task/handler"
+	"github.com/alyaskastorm/Fintech-Test-Task/storage"
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/gommon/log"
 )
 
 func main() {
@@ -16,8 +15,6 @@ func main() {
 	handler := h.NewHandler(storage)
 
 	e := echo.New()
-
-	e.Logger.SetLevel(log.DEBUG)
 
 	e.Logger.Print(e.POST("/short", handler.Short))
 	e.Logger.Print(e.POST("/long", handler.Long))
