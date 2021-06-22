@@ -30,5 +30,5 @@
 ## Запуск проекта
 `make run && make build`
 ***
-## Показ работы
-<img src="ken.gif" height="150">
+## Пример работы
+<img src="example.gif" height="248">
