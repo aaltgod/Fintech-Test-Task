@@ -1,11 +1,11 @@
 package handler
 
 import (
+	"net/http"
+
 	"github.com/alyaskastorm/Fintech-Test-Task/storage"
 	"github.com/alyaskastorm/Fintech-Test-Task/tools"
 	"github.com/labstack/echo/v4"
-	"log"
-	"net/http"
 )
 
 type Handler struct {
@@ -28,17 +28,14 @@ func (h *Handler) Short(c echo.Context) error {
 	// Check if long URL exists
 	shortURL := h.storage.GetShort(url.Name)
 	if shortURL != "" {
-		log.Println("exists", shortURL)
 		url.Name = shortURL
 		return c.JSON(http.StatusOK, url)
 	}
 
-	shortURL, err := tools.ShortURL(url.Name)
-	if err != nil {
-		return err
-	}
+	ID := tools.RandomID(8)
+	shortURL = "https://mysite.com/" + ID
 
-	if err = h.storage.Create(url.Name, shortURL); err != nil {
+	if err := h.storage.Create(ID, url.Name, shortURL); err != nil {
 		return err
 	}
 

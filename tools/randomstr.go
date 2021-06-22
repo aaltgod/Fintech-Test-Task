@@ -16,5 +16,5 @@ func RandomID(IDlen int) string {
 		result[i] = alph[rand.Intn(len(alph))]
 	}
 
-	return "http://localhost:3000/" + string(result)
+	return string(result)
 }

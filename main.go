@@ -7,9 +7,9 @@ import (
 )
 
 func main() {
-	db := storage.CreateConnection()
-	storage.PrepareStorage(db)
-	db.Close()
+	st := storage.CreateConnection()
+	storage.PrepareStorage(st)
+	st.Close()
 
 	storage := storage.NewURLStorage()
 	handler := h.NewHandler(storage)

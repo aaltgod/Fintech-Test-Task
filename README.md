@@ -21,3 +21,14 @@
    Сервис можно реализовать как стандартной библиотекой(net/http), так и фреймворками gin, echo
    Запросы в БД на pure sql, либо https://github.com/Masterminds/squirrel
    Короткие ссылки должны основываться на id записи(sequence) в БД, переведённой в систему счисления с алфавитом [A-Za-z0-9]
+***
+## Технологии
+- Go, Echo
+- PostgreSQL
+- Docker
+***
+## Запуск проекта
+`make run && make build`
+***
+## Показ работы
+<img src="ken.gif" height="150">
