@@ -2,9 +2,9 @@ package storage
 
 import (
 	"database/sql"
-	"log"
-
 	_ "github.com/lib/pq"
+	"log"
+	"time"
 )
 
 var (
@@ -34,6 +34,8 @@ func CreateConnection() *sql.DB {
 	if  err != nil {
 		log.Fatalf("[Open] %s", err)
 	}
+
+	db.SetConnMaxLifetime(time.Minute)
 
 	err = db.Ping()
 	if err != nil {

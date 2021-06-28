@@ -2,15 +2,15 @@ APP_NAME=app
 DB_NAME=storage
 
 run:
-	@echo "RUN postgres"
-	docker run -d --name $(DB_NAME) --rm postgres:10.5
+	@echo "====== RUN postgres ======"
+	docker run -d --name $(DB_NAME) --rm -p 5432:5432 postgres:10.5
 
 build:
-	@echo "BUILD and RUN app"
-	go mod download && go build -o $(APP_NAME) .
-	./app
+	@echo "====== BUILD and RUN app ======"
+	go mod download && go build -o ./.bin/$(APP_NAME) cmd/api/main.go
+	./.bin/$(APP_NAME)
 
 clean:
-	rm $(APP_NAME)
 	docker stop $(DB_NAME)
+	rm ./.bin/$(APP_NAME)
 
